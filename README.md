@@ -1,17 +1,39 @@
-# Mugar Templates
+# Repository tasks
 
-Templates used on respositories.
+After creating the repository with the template, you must:
+
+* Edit the file .github / pull_request_template.md and change holamugar / module-module-name with the correct module name.
+* Edit README.md and change all references to ModuleName by the correct module name.
+* Remove this block from README.md, from the beginning of the document to the next block H1.
+ 
+
+# Mugar_ModuleName for Magento2
+
+General description of the module.
 
 ## Installation
 
-There isn't install process.
+Use [composer](https://getcomposer.org/) to install Mugar_ModuleName.
 
-We just copy&paste these templates into our repositories.
+```
+composer require mugar/module-name-using-hyphen-case
+```
 
+Then you'll need to activate the module.
+
+```
+bin/magento module:enable Mugar_ModuleName
+bin/magento setup:upgrade
+bin/magento cache:clean
+```
 
 ## Uninstall
 
-Remove the template from the repository. 
+```
+bin/magento module:uninstall Mugar_ModuleName
+```
+
+If you used Composer for installation Magento will remove the files and database information. 
 
 ## Support
 
